@@ -76,11 +76,11 @@ def transform_value(value):
 def get_entities (value):
     language = str(value['data']['lang'])
     corpus = str(value['data']['text'])
-    #To be filled with your Text Analytics details: endpoint, key, deployment name and project name
-    endpoint = 'https://westeurope.api.cognitive.microsoft.com/text/analytics/v3.2-preview.2/analyze' #to be updated once product goes GA
-    key = 'x'
-    project_name = 'y'
-    deployment =  'z'
+    #To be filled with your Text Analytics details: endpoint, key, deployment name and project name inside your appsettings (https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings)
+    endpoint = os.environ["TA_ENDPOINT"] # This will look like 'https://westeurope.api.cognitive.microsoft.com/text/analytics/v3.2-preview.2/analyze' to be updated once product goes GA
+    key = os.environ["TA_KEY"]
+    project_name = os.environ["PROJECT_NAME"]
+    deployment =  os.environ["DEPLOYMENT"]
     body = "{'displayName': 'Extracting custom NERS', 'analysisInput': {'documents': [{'id': '1', 'language': '" + language + "', 'text':'" + corpus + "'}]}, 'tasks': {'customEntityRecognitionTasks': [{'parameters': {'project-name': '"+ project_name +"','deployment-name': '"+ deployment +"'}}]}}"
     header = {'Ocp-Apim-Subscription-Key': key}
     #TA Custom NER API works in two steps, first you post the job, afterwards you get the result
