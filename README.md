@@ -17,12 +17,14 @@ Products:
 # Steps    
 
 1. Create or reuse a Text Analytics resource. Creation can be done from the Azure portal or in [Language Studio](https://language.azure.com/home)
-2. Train your model with a dataset (a sample train and eval dataset can be found [here](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/language-service/Custom%20NER/loan%20agreements) in case you dont have docs to work with) and deploy it. In case you are not familiar with Custom NER you can find a tutorial [here](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/custom-named-entity-recognition/quickstart?pivots=language-studio#upload-sample-data-to-blob-container)
+2. Train your model with a dataset (a sample train and eval dataset can be found [here](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/language-service/Custom%20NER/loan%20agreements) in case you dont have docs to work with) and deploy it. In case you are not familiar with Custom NER, this is a simple [tutorial](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/custom-named-entity-recognition/quickstart?pivots=language-studio#upload-sample-data-to-blob-container) to guide you
 3. Fill your appsettings with the custom details from your deployment ('TA_ENDPOINT', 'TA_KEY', 'DEPLOYMENT', 'PROJECT_NAME')
 4. Clone this repository
-5. Open the foler in VS Code and deploy the function
-6. Add the skill to your skillset as [described below](#sample-skillset-integration)
-7. Run the indexer
+5. Open the folder in VS Code and deploy the function, find here a [tutorial](https://docs.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-python)
+6. Add a field in your index where you will dump the enriched entities, more info [here](#sample-index-field-definition)
+7. Add the skill to your skillset as [described below](#sample-skillset-integration)
+8. Add the output field mapping in your indexer as [seen in the sample](#sample-indexer-output-field-mapping)
+9. Run the process 
 
 ## Sample Input:
 
