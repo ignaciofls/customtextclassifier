@@ -16,7 +16,7 @@ Products:
 
 # Steps    
 
-1. Create or reuse a Text Analytics resource. Creation can be done from the Azure portal or in Language Studio (https://language.azure.com/home)
+1. Create or reuse a Text Analytics resource. Creation can be done from the Azure portal or in [Language Studio](https://language.azure.com/home)
 2. Train your model with a dataset (a sample train and eval dataset can be found [here](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/language-service/Custom%20NER/loan%20agreements) in case you dont have docs to work with) and deploy it. In case you are not familiar with Custom NER you can find a tutorial [here](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/custom-named-entity-recognition/quickstart?pivots=language-studio#upload-sample-data-to-blob-container)
 3. Fill your appsettings with the custom details from your deployment ('TA_ENDPOINT', 'TA_KEY', 'DEPLOYMENT', 'PROJECT_NAME')
 4. Clone this repository
@@ -101,9 +101,9 @@ Here's a sample skill definition for this example (inputs and outputs should be 
     }
 ```
 
-### Sample Index Field Definition
+## Sample Index Field Definition
 
-The skill will output the entities that have been extracted for the corpus. In this example I am just expecting one entity, so I need to populate a field of Edm.ComplexType that will contain subfields for Category, Confidence, Offset and Length. If more than one Entity is expected go for Collection.ComplexType instead of Edm.ComplexType
+The skill will output the entities that have been extracted for the corpus. In this example, I am just expecting one entity so I need to populate a field of Edm.ComplexType that will contain subfields for Category, Confidence, Offset and Length. If more than one Entity is expected, go for Collection.ComplexType instead of Edm.ComplexType.
 
 ```json
 {
@@ -189,9 +189,9 @@ The skill will output the entities that have been extracted for the corpus. In t
     }
 ```
 
-### Sample Indexer Output Field Mapping
+## Sample Indexer Output Field Mapping
 
-The output enrichment of your skill can be directly mapped to one of your fields [described above](### Sample Index Field Definition). This can be done with the indexer setting:
+The output enrichment of your skill can be directly mapped to one of your fields described above. This can be done with the indexer setting:
 ```
   "outputFieldMappings": [
     {
